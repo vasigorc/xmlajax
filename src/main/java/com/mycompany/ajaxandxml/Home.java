@@ -5,7 +5,9 @@
 package com.mycompany.ajaxandxml;
 
 import java.io.IOException;
-import java.io.PrintWriter;
+import java.util.LinkedList;
+import java.util.List;
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -16,9 +18,9 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author vasigorc
  */
-@WebServlet(name = "Home", urlPatterns = {"/home"})
+@WebServlet(name = "Home", urlPatterns = "/home")
 public class Home extends HttpServlet {
-
+    
     /**
      * Processes requests for both HTTP
      * <code>GET</code> and
@@ -28,26 +30,31 @@ public class Home extends HttpServlet {
      * @param response servlet response
      * @throws ServletException if a servlet-specific error occurs
      * @throws IOException if an I/O error occurs
-     
+     */
+     List<String> lst = new LinkedList<>();
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        response.setContentType("text/html;charset=UTF-8");
-        PrintWriter out = response.getWriter();
-        try {
-            /* TODO output your page here. You may use following sample code. 
-            out.println("<!DOCTYPE html>");
-            out.println("<html>");
-            out.println("<head>");
-            out.println("<title>Servlet Home</title>");            
-            out.println("</head>");
-            out.println("<body>");
-            out.println("<h1>Servlet Home at " + request.getContextPath() + "</h1>");
-            out.println("</body>");
-            out.println("</html>");
-        } finally {            
-            out.close();
-        }
-    }*/
+        lst.add("The Break-Up");
+        lst.add("Cars");
+        lst.add("Click");
+        lst.add("District B-13");
+        lst.add("Garfield: A Tail of Two Kitties");
+        lst.add("The Heart of the Game");
+        lst.add("An Incoenvenient Truth");
+        lst.add("Keeping Up with Steins");
+        lst.add("Krrish");
+        lst.add("The Lake House");
+        lst.add("The Lost City");
+        lst.add("Over the Hedge");
+        lst.add("A Prairie Home Companion");
+        lst.add("The Road to Guantanamo");
+        lst.add("Worldplay");
+        request.setAttribute("movielist", lst);
+        String url = "home.jsp";
+        RequestDispatcher rd = request.getRequestDispatcher(url);
+        rd.forward(request, response);
+
+    }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
@@ -62,7 +69,8 @@ public class Home extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-      //  processRequest(request, response);
+        processRequest(request, response);
+
     }
 
     /**
@@ -77,7 +85,7 @@ public class Home extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        //processRequest(request, response);
+        processRequest(request, response);
     }
 
     /**

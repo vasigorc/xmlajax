@@ -1,0 +1,543 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<movies>
+    <movie>
+        <title>The Break-Up</title>
+        <nopasses>false</nopasses>
+        <duration>PT1H46M</duration>
+        <genre>Comedy</genre>
+        <rank>G</rank>
+        <showingon>
+            <showtime>12:00:00</showtime>
+            <showtime>13:50:00</showtime>
+            <showtime>14:35:00</showtime>
+            <showtime>16:25:00</showtime>
+            <showtime>17:10:00</showtime>
+            <showtime>19:00:00</showtime>
+            <showtime>19:50:00</showtime>
+            <showtime>21:35:00</showtime>
+            <showtime>22:25:00</showtime>
+        </showingon>
+        <released>2006-06-02</released>
+        <actors>
+            <actor>Vince Vaughn</actor>
+            <actor>Jennifer Aniston</actor>
+            <actor>Joey Lauren Adams</actor>
+            <actor>Ann-Margaret</actor>
+            <actor>Jason Bateman</actor>
+        </actors>
+        <directors>
+            <director>Peyton Reed</director>
+        </directors>
+        <producers>
+            <producer>Vince Vaughn</producer>
+        </producers>
+        <writers>
+            <writer>Jay Lavender</writer>
+            <writer>Jeremy Garelick</writer>
+            <writer>Vince Vaughn</writer>
+        </writers>
+        <studios>
+            <studio>Universal Pictures</studio>
+        </studios>
+    </movie>
+    <movie>
+        <title>Cars</title>
+        <nopasses>false</nopasses>
+        <duration>PT1H57M</duration>
+        <genre>Animation</genre>
+        <rank>G</rank>
+        <showingon>
+            <showtime>12:25:00</showtime>
+            <showtime>13:00:00</showtime>
+            <showtime>15:15:00</showtime>
+            <showtime>16:05:00</showtime>
+            <showtime>18:30:00</showtime>
+            <showtime>21:15:00</showtime>
+            <showtime>21:55:00</showtime>
+        </showingon>
+        <released>2006-06-09</released>
+        <actors>
+            <actor>Paul Newman</actor>
+            <actor>Owen Wilson</actor>
+            <actor>Bonnie Hunt</actor>
+            <actor>&quot;Lary the Cable Guy&quot;</actor>
+            <actor>Cheech Marin</actor>
+        </actors>
+        <directors>
+            <director>John Lasseter</director>
+        </directors>
+        <producers>
+            <producer>Darla Anderson</producer>
+        </producers>
+        <writers>
+            <writer>John Lasseter</writer>
+        </writers>
+        <studios>
+            <studio>Bueno Vista</studio>
+        </studios>
+    </movie>
+    <movie>
+        <title>Click</title>
+        <nopasses>true</nopasses>
+        <duration>PT1H37M</duration>
+        <genre>Comedy</genre>
+        <rank>G</rank>
+        <showingon>
+            <showtime>11:45:00</showtime>
+            <showtime>12:15:00</showtime>
+            <showtime>12:45:00</showtime>
+            <showtime>13:30:00</showtime>
+            <showtime>14:15:00</showtime>
+            <showtime>15:00:00</showtime>
+            <showtime>15:30:00</showtime>
+            <showtime>16:15:00</showtime>
+            <showtime>17:00:00</showtime>
+            <showtime>17:45:00</showtime>
+            <showtime>18:15:00</showtime>
+            <showtime>19:45:00</showtime>
+            <showtime>20:30:00</showtime>
+            <showtime>20:55:00</showtime>
+            <showtime>21:45:00</showtime>
+            <showtime>22:30:00</showtime>
+        </showingon>
+        <released>2006-06-23</released>
+        <actors>
+            <actor>Adam Sandler</actor>
+            <actor>Cristopher Walken</actor>
+            <actor>Kate Beckinsale</actor>
+            <actor>David Hasselhoff</actor>
+            <actor>Sean Astin</actor>
+        </actors>
+        <directors>
+            <director>Frank Coraci</director>
+        </directors>
+        <producers>
+            <producer>Neal H Moritz</producer>
+            <producer>Jack Giarraputo</producer>
+            <producer>Adam Sandler</producer>
+        </producers>
+        <writers>
+            <writer>Steven Koren</writer>
+            <writer>Mark O&apos;Keefe</writer>
+            <writer>Tim Herlihy</writer>
+        </writers>
+        <studios>
+            <studio>Sony Pictures Releasing</studio>
+        </studios>
+    </movie>
+    <movie>
+        <title>District B&#8211;13 (Banlieu 13)</title>
+        <nopasses>true</nopasses>
+        <genre>SciFi/Fantasy</genre>
+        <rank>13+</rank>
+        <showingon>
+            <showtime>12:05:00</showtime>
+            <showtime>14:15:00</showtime>
+            <showtime>16:25:00</showtime>
+            <showtime>19:15:00</showtime>
+            <showtime>21:25:00</showtime>
+        </showingon>
+        <released>2006-06-02</released>
+        <actors>
+            <actor>Cyril Raffaelli</actor>
+            <actor>David Belle</actor>
+            <actor>Tony D&apos;Amario</actor>
+            <actor>Bibi Naceri</actor>
+            <actor>Dany Verissimo</actor>
+        </actors>
+        <directors>
+            <director>Pierre Morel</director>
+        </directors>
+        <producers>
+            <producer>Luc Besson</producer>
+        </producers>
+        <writers>
+            <writer>Luc Besson</writer>
+            <writer>Bibi Naceri</writer>
+        </writers>
+        <studios>
+            <studio>Magnolia Pictures</studio>
+        </studios>
+    </movie>
+    <movie>
+        <title>Garfield: A Tail of Two Kitties</title>
+        <nopasses>false</nopasses>
+        <duration>PT1H20M</duration>
+        <genre>Animation</genre>
+        <rank>G</rank>
+        <showingon>
+            <showtime>12:30:00</showtime>
+            <showtime>14:35:00</showtime>
+            <showtime>16:40:00</showtime>
+            <showtime>19:00:00</showtime>
+            <showtime>21:00:00</showtime>
+        </showingon>
+        <released>2006-06-16</released>
+        <actors>
+            <actor>Breckin Meyer</actor>
+            <actor>Jennifer Love Hewitt</actor>
+            <actor>Billy Connolly</actor>
+            <actor>Lucy Davis</actor>
+            <actor>Bill Murray</actor>
+        </actors>
+        <directors>
+            <director>Tim Hill</director>
+        </directors>
+        <producers>
+            <producer>John Davis</producer>
+        </producers>
+        <writers>
+            <writer>Alec Sokolow</writer>
+            <writer>Joel Cohen</writer>
+        </writers>
+        <studios>
+            <studio>20th Century Fox</studio>
+        </studios>
+    </movie>
+    <movie>
+        <title>The Heart of the Game</title>
+        <nopasses>true</nopasses>
+        <duration>PT1H42M</duration>
+        <genre>Documentary</genre>
+        <rank>G</rank>
+        <showingon>
+            <showtime>12:00:00</showtime>
+            <showtime>14:30:00</showtime>
+            <showtime>17:05:00</showtime>
+            <showtime>17:35:00</showtime>
+            <showtime>22:05:00</showtime>
+        </showingon>
+        <released>2006-07-07</released>
+        <actors>
+            <actor>Darnelia Russell</actor>
+            <actor>Bill Resler</actor>
+            <actor>Devon Crosby&#8211;Helms</actor>
+            <actor>Meghan Miller</actor>
+            <actor>Jade White</actor>
+        </actors>
+        <directors>
+            <director>Ward Serrill</director>
+        </directors>
+        <producers>
+            <producer>Ward Serrill</producer>
+            <producer>Liz Maine</producer>
+        </producers>
+        <writers>
+            <writer>Ward Serrill</writer>
+        </writers>
+        <studios>
+            <studio>Miramax Films</studio>
+        </studios>
+    </movie>
+    <movie>
+        <title>An Inconvenient Truth</title>
+        <nopasses>false</nopasses>
+        <duration>PT1H40M</duration>
+        <genre>Documentary</genre>
+        <rank>G</rank>
+        <showingon>
+            <showtime>12:10:00</showtime>
+            <showtime>12:50:00</showtime>
+            <showtime>14:25:00</showtime>
+            <showtime>15:10:00</showtime>
+            <showtime>16:45:00</showtime>
+            <showtime>17:30:00</showtime>
+            <showtime>19:15:00</showtime>
+            <showtime>19:50:00</showtime>
+            <showtime>21:35:00</showtime>
+            <showtime>22:10:00</showtime>
+        </showingon>
+        <released>2005-05-24</released>
+        <actors>
+            <actor>Al Gore</actor>
+        </actors>
+        <directors>
+            <director>David Guggenheim</director>
+        </directors>
+        <producers>
+            <producer>Lawrence Bender</producer>
+            <producer>Scott Z. Burns</producer>
+            <producer>Laurie David</producer>
+            <producer>Al Gore</producer>
+        </producers>
+        <writers></writers>
+        <studios>
+            <studio>Paramount Classics</studio>
+        </studios>
+    </movie>
+    <movie>
+        <title>Keeping Up with Steins</title>
+        <nopasses>false</nopasses>
+        <duration>PT1H39M</duration>
+        <genre>Comedy</genre>
+        <rank>G</rank>
+        <showingon>
+            <showtime>13:15:00</showtime>
+            <showtime>15:30:00</showtime>
+            <showtime>17:45:00</showtime>
+            <showtime>20:00:00</showtime>
+            <showtime>22:15:00</showtime>
+        </showingon>
+        <released>2006-05-12</released>
+        <actors>
+            <actor>Jami Gertz</actor>
+            <actor>Daryl Hannah</actor>
+            <actor>Garry Marshall</actor>
+            <actor>Jeremy Piven</actor>
+            <actor>Doris Roberts</actor>
+        </actors>
+        <directors>
+            <director>Scott Marshall</director>
+        </directors>
+        <producers>
+            <producer>A.D. Oppenheim</producer>
+            <producer>David Scharf</producer>
+            <producer>Mark Zakarin</producer>
+        </producers>
+        <writers>
+            <writer>Mark Zakarin</writer>
+        </writers>
+        <studios>
+            <studio>Miramax Films</studio>
+        </studios>
+    </movie>
+    <movie>
+        <title>Krrish</title>
+        <nopasses>true</nopasses>
+        <duration>PT2H55M</duration>
+        <genre>Romance</genre>
+        <rank>unrated</rank>
+        <showingon>
+            <showtime>13:00:00</showtime>
+            <showtime>16:45:00</showtime>
+            <showtime>20:30:00</showtime>
+        </showingon>
+        <actors>
+            <actor>Hritnik Roshan</actor>
+            <actor>Priyanka Chopra</actor>
+            <actor>Naseruddin Shah</actor>
+            <actor>Rekha</actor>
+            <actor>Sharat Saxena</actor>
+        </actors>
+        <directors>
+            <director>Rakesh Roshan</director>
+        </directors>
+        <producers>
+            <producer>Rakesh Roshan</producer>
+        </producers>
+        <writers>
+            <writer>Robin Bhatt</writer>
+            <writer>Sachin Bhowmick</writer>
+        </writers>
+        <studios>
+            <studio>Adlabs Films</studio>
+        </studios>
+    </movie>
+    <movie>
+        <title>The Lake House</title>
+        <nopasses>false</nopasses>
+        <duration>PT1H45M</duration>
+        <genre>Drama</genre>
+        <rank>G</rank>
+        <showingon>
+            <showtime>12:20:00</showtime>
+        </showingon>
+        <released>2006-06-16</released>
+        <actors>
+            <actor>Keanu Reeves</actor>
+            <actor>Sandra Bullock</actor>
+            <actor>Christopher Plummer</actor>
+            <actor>Lynn Collins</actor>
+            <actor>Shohreh Aghdashloo</actor>
+        </actors>
+        <directors>
+            <director>Alejandro Agresti</director>
+        </directors>
+        <producers>
+            <producer>Doug Davison</producer>
+            <producer>Roy Lee</producer>
+        </producers>
+        <writers>
+            <writer>David Auburn</writer>
+        </writers>
+        <studios>
+            <studio>Warner Bros.</studio>
+        </studios>
+    </movie>
+    <movie>
+        <title>The Lost City</title>
+        <nopasses>false</nopasses>
+        <duration>PT2H23M</duration>
+        <genre>Drama</genre>
+        <rank>13+</rank>
+        <showingon>
+            <showtime>12:50:00</showtime>
+            <showtime>16:00:00</showtime>
+            <showtime>19:10:00</showtime>
+            <showtime>22:20:00</showtime>
+        </showingon>
+        <released>2006-04-28</released>
+        <actors>
+            <actor>Steven Bauer</actor>
+            <actor>Richard Bradford</actor>
+            <actor>Nestor Carbonell</actor>
+            <actor>Lorena Feij&#243;o</actor>
+            <actor>Andy Garcia</actor>
+        </actors>
+        <directors>
+            <director>Andy Garcia</director>
+        </directors>
+        <producers>
+            <producer>Andy Garcia</producer>
+            <producer>Frank Mancuso, Jr.</producer>
+        </producers>
+        <writers>
+            <writer>G. Cabrera Infante</writer>
+        </writers>
+        <studios>
+            <studio>Magnolia Pictures</studio>
+        </studios>
+    </movie>
+    <movie>
+        <title>Over the Hedge</title>
+        <nopasses>false</nopasses>
+        <duration>PT1H27M</duration>
+        <genre>Comedy</genre>
+        <rank>G</rank>
+        <showingon>
+            <showtime>12:30:00</showtime>
+            <showtime>14:45:00</showtime>
+            <showtime>16:55:00</showtime>
+            <showtime>19:20:00</showtime>
+            <showtime>21:30:00</showtime>
+        </showingon>
+        <released>2006-05-19</released>
+        <actors>
+            <actor>Bruce Willis</actor>
+            <actor>Grace Shandling</actor>
+            <actor>William Shatner</actor>
+            <actor>Wanda Sykes</actor>
+            <actor>Nick Nolte</actor>
+        </actors>
+        <directors>
+            <director>Tim Johnson</director>
+            <director>Karey Kirkpatrick</director>
+        </directors>
+        <producers>
+            <producer>Bonnie Arnold</producer>
+        </producers>
+        <writers>
+            <writer>Len Blum</writer>
+            <writer>Michael Fry</writer>
+            <writer>T Lewis</writer>
+        </writers>
+        <studios>
+            <studio>Dreamworks</studio>
+        </studios>
+    </movie>
+    <movie>
+        <title>A Prairie Home Companion</title>
+        <nopasses>false</nopasses>
+        <duration>PT1H40M</duration>
+        <genre>Comedy</genre>
+        <rank>G</rank>
+        <showingon>
+            <showtime>12:05:00</showtime>
+            <showtime>14:30:00</showtime>
+            <showtime>17:00:00</showtime>
+            <showtime>19:35:00</showtime>
+            <showtime>22:00:00</showtime>
+        </showingon>
+        <released>2006-06-09</released>
+        <actors>
+            <actor>Woody Harrelson</actor>
+            <actor>Tommy Lee Jones</actor>
+            <actor>Garrison Keillor</actor>
+            <actor>Kevin Kline</actor>
+            <actor>Lindsay Lohan</actor>
+        </actors>
+        <directors>
+            <director>Robert Altman</director>
+        </directors>
+        <producers>
+            <producer>Robert Altman</producer>
+            <producer>Wren Arthur</producer>
+            <producer>Joshua Astrachan</producer>
+            <producer>Tony Judge</producer>
+            <producer>David Levy</producer>
+        </producers>
+        <writers>
+            <writer>Garrison Keillor</writer>
+        </writers>
+        <studios>
+            <studio>Picturehouse</studio>
+        </studios>
+    </movie>
+    <movie>
+        <title>The Road to Guantanamo</title>
+        <nopasses>true</nopasses>
+        <duration>PT1H35M</duration>
+        <genre>Documentary</genre>
+        <rank>13+</rank>
+        <showingon>
+            <showtime>12:40:00</showtime>
+            <showtime>15:00:00</showtime>
+            <showtime>17:20:00</showtime>
+            <showtime>19:40:00</showtime>
+            <showtime>22:00:00</showtime>
+        </showingon>
+        <released>2006-06-23</released>
+        <actors>
+            <actor>Riz Ahmed</actor>
+            <actor>Steven Beckingham</actor>
+            <actor>George W. Bush</actor>
+            <actor>Nancy Crane</actor>
+            <actor>Christopher Fosh</actor>
+        </actors>
+        <directors>
+            <director>Michael Winterbottom</director>
+            <director>Mat Whitecross</director>
+        </directors>
+        <producers>
+            <producer>Andrew Eaton</producer>
+            <producer>Melissa Parmenter</producer>
+            <producer>Michael Winterbottom</producer>
+        </producers>
+        <writers></writers>
+        <studios>
+            <studio>Roadside Attractions</studio>
+        </studios>
+    </movie>
+    <movie>
+        <title>Wordplay</title>
+        <nopasses>true</nopasses>
+        <duration>PT1H30M</duration>
+        <genre>Documentary</genre>
+        <rank>G</rank>
+        <showingon>
+            <showtime>12:20:00</showtime>
+            <showtime>14:40:00</showtime>
+            <showtime>17:05:00</showtime>
+            <showtime>19:30:00</showtime>
+            <showtime>21:50:00</showtime>
+        </showingon>
+        <released>2006-06-16</released>
+        <actors>
+            <actor>Will Shortz</actor>
+            <actor>John Stewart</actor>
+            <actor>Bill Clinton</actor>
+            <actor>Bob Dole</actor>
+            <actor>Mike Mussina</actor>
+        </actors>
+        <directors>
+            <director>Patrick Creadon</director>
+        </directors>
+        <producers>
+            <producer>Christine O&apos;Malley</producer>
+        </producers>
+        <writers></writers>
+        <studios>
+            <studio>IFC Films</studio>
+        </studios>
+    </movie>
+</movies>

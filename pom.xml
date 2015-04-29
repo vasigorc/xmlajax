@@ -21,6 +21,11 @@
             <version>7.0</version>
             <scope>provided</scope>
         </dependency>
+        <dependency>
+            <groupId>joda-time</groupId>
+            <artifactId>joda-time</artifactId>
+            <version>2.7</version>
+        </dependency>
     </dependencies>
 
     <build>
@@ -87,7 +92,7 @@
                 </executions>
             </plugin>
             
-             <plugin>
+            <plugin>
                 <!-- Executes JUnit tests and writes the results as an xml and txt file
                 Test classes must include one of the following in their name: Test* *Test
                 *TestCase -->
