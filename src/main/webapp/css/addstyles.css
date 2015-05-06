@@ -1,0 +1,58 @@
+/* 
+    Document   : addstyles
+    Created on : 18 avr. 2015, 12:20:55
+    Author     : vasigorc
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+root { 
+    display: block;
+}
+td{
+    height: 3em;
+    width: 30em;
+}
+.biggerCopy{
+    font-size: 1.875em;
+    color: #3985D9;
+}
+.center{
+    text-align: center;
+}
+.italic{
+    font-style: italic;
+    font-weight: normal;
+}
+#csstable{
+    width: 80%; 
+    position: relative; 
+    margin-left: 5em; 
+    margin-top: 2em;
+}
+#csstable td{
+    text-align: center;
+    vertical-align: middle;
+    color: grey;
+}
+#csstable td:nth-child(even){
+    text-align: left;
+    color: black;
+}
+#csstable th{
+    text-align: right;
+    font-size: 2.2em;
+    vertical-align: middle;
+}
+.roundborderRed{
+    border-radius: 50px;
+    background-color: #DF2D29;
+    color: white;
+    padding: 5px;
+}
+.roundborderGreen{
+    border-radius: 50px;
+    background-color: #1A9C48;
+    color: white;
+    padding: 5px;
+}

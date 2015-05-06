@@ -20,7 +20,7 @@ import javax.servlet.http.HttpServletResponse;
  */
 @WebServlet(name = "Home", urlPatterns = "/home")
 public class Home extends HttpServlet {
-    
+
     /**
      * Processes requests for both HTTP
      * <code>GET</code> and
@@ -31,16 +31,16 @@ public class Home extends HttpServlet {
      * @throws ServletException if a servlet-specific error occurs
      * @throws IOException if an I/O error occurs
      */
-     List<String> lst = new LinkedList<>();
-    protected void processRequest(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
+    List<String> lst = new LinkedList<>();
+    @Override
+    public void init()throws ServletException{
         lst.add("The Break-Up");
         lst.add("Cars");
         lst.add("Click");
-        lst.add("District B-13");
+        lst.add("District B–13 (Banlieu 13)");
         lst.add("Garfield: A Tail of Two Kitties");
         lst.add("The Heart of the Game");
-        lst.add("An Incoenvenient Truth");
+        lst.add("An Inconvenient Truth");
         lst.add("Keeping Up with Steins");
         lst.add("Krrish");
         lst.add("The Lake House");
@@ -49,6 +49,11 @@ public class Home extends HttpServlet {
         lst.add("A Prairie Home Companion");
         lst.add("The Road to Guantanamo");
         lst.add("Worldplay");
+    }
+
+    protected void processRequest(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+
         request.setAttribute("movielist", lst);
         String url = "home.jsp";
         RequestDispatcher rd = request.getRequestDispatcher(url);

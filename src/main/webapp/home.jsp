@@ -12,13 +12,14 @@
         <title>Start Page</title>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel="stylesheet" href="css/bootstrap.min.css"></link>
+        <link rel="stylesheet" href="css/addstyles.css"></link>
         <script type="text/javascript" src="js/jquery.min.js"></script>
         <script type="text/javascript" src="js/homejQ.js"></script>
     </head>
     <body>
 
         <h1 style="text-align: center">Look by:</h1>
-        <div id="maincontent" style="margin-left: 5em">
+        <div id="maincontent" style="margin-left: 5em; margin-right: 5em">
             <div class="radio">
                 <label class="radio-inline">
                     <input type="radio" data-bind="checked: radioSelectedOptionValue" value="Movie Title">Movie Title

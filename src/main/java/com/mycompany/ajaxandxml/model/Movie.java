@@ -7,6 +7,8 @@ package com.mycompany.ajaxandxml.model;
 import org.joda.time.LocalDate;
 import org.joda.time.LocalTime;
 import org.joda.time.Period;
+import org.joda.time.format.DateTimeFormat;
+import org.joda.time.format.DateTimeFormatter;
 import org.joda.time.format.ISOPeriodFormat;
 import org.joda.time.format.PeriodFormatter;
 
@@ -24,12 +26,26 @@ public class Movie {
      * duration format
      */
     private Period duration;
-    private static PeriodFormatter parser = ISOPeriodFormat.standard();
+    private static final PeriodFormatter parser = ISOPeriodFormat.standard();
+    private static final DateTimeFormatter timeFormatter = DateTimeFormat.forPattern("HH:mm:ss");
+    private static final DateTimeFormatter dateFormatter = DateTimeFormat.forPattern("yyyy-MM-dd");
     private LocalTime[] showingon;
     private LocalDate released;
-    private String[] actors, directors, producers, studios;
+    private String[] actors, directors, producers, writers, studios;
 
     public Movie() {
+    }
+
+    public static DateTimeFormatter getTimeFormatter() {
+        return timeFormatter;
+    }
+
+    public static DateTimeFormatter getDateFormatter() {
+        return dateFormatter;
+    }
+
+    public static PeriodFormatter getParser() {
+        return parser;
     }
 
     public void setGenre(String genre) {
@@ -60,9 +76,17 @@ public class Movie {
         this.producers = producers;
     }
 
+    public String[] getWriters() {
+        return writers;
+    }
+
+    public void setWriters(String[] writers) {
+        this.writers = writers;
+    }
+
     public void setStudios(String[] studios) {
         this.studios = studios;
-    }   
+    }
 
     public String getGenre() {
         return genre;
@@ -82,7 +106,7 @@ public class Movie {
     }
 
     public String getReleased() {
-        return released.getYear()+"-"+released.getMonthOfYear()+"-"+released.getDayOfMonth();
+        return released.getYear() + "-" + released.getMonthOfYear() + "-" + released.getDayOfMonth();
     }
 
     public String[] getActors() {
@@ -102,7 +126,8 @@ public class Movie {
     }
 
     public String getDuration() {
-        return parser.print(duration);
+        //return parser.print(duration);
+        return duration.getHours()+" hour "+duration.getMinutes()+" minutes and "+duration.getSeconds()+" seconds";
     }
 
     public void setDuration(Period duration) {

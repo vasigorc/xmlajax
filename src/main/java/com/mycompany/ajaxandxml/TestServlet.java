@@ -4,10 +4,15 @@
  */
 package com.mycompany.ajaxandxml;
 
+import com.mycompany.ajaxandxml.model.Movie;
 import com.mycompany.ajaxandxml.model.XmlParser;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
+import java.util.logging.FileHandler;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -39,19 +44,14 @@ public class TestServlet extends HttpServlet {
         String usrChoice = request.getParameter("choice");
         String inputValue = request.getParameter("input");
         try (PrintWriter out = response.getWriter()) {
-            /* TODO output your page here. You may use following sample code. */
-
-            //out.println("<h1>Well hello " + inputValue + "</h1>");
-
             switch (usrChoice) {
                 case "Movie Title":
-                    this.getMovieInfo(response, inputValue);
+                    this.getMovieInfo(request, response, inputValue);
                     break;
                 case "Specific Actor":
                     this.getActorMovies(response, inputValue);
                     break;
                 case "Specific Director":
-                    //out.println("<h1>The selected director is  " + inputValue + "</h1>");
                     this.getDirectorMovies(response, inputValue);
                     break;
                 default:
@@ -109,10 +109,34 @@ public class TestServlet extends HttpServlet {
         }
     }
 
-    protected void getMovieInfo(HttpServletResponse response, String movieTitle)
-            throws IOException {
-        try (PrintWriter out = response.getWriter()) {
-            out.println("<h1>We're watching " + movieTitle + "</h1>");
+    protected void getMovieInfo(HttpServletRequest request, HttpServletResponse response, String movieTitle)
+            throws IOException, ServletException {
+        //        try (PrintWriter out = response.getWriter()) {
+        //            out.println("<h1>We're watching " + movieTitle + "</h1>");
+        //        }
+        try {
+//            boolean append = true;
+//            FileHandler handler = new FileHandler("C:\\Users\\vasigorc\\Documents\\NetBeansProjects\\ajaxandxml\\src\\main\\java\\com\\mycompany\\ajaxandxml\\model\\MyLogFile.log", append);
+//            Logger logger = Logger.getLogger("MyLog");
+//            logger.addHandler(handler);            
+            Movie reqMovie = new XmlParser().getMovieInfo(movieTitle);            
+            request.setAttribute("selectedMovie", movieTitle);
+            request.setAttribute("movieInfo", reqMovie);
+            String url = "movieinfo.jsp";
+            RequestDispatcher rd = request.getRequestDispatcher(url);
+            rd.forward(request, response);              
+        } catch (SAXException ex) {
+            try (PrintWriter writer = response.getWriter();){
+                writer.print("<h3>"+movieTitle+" threw SAXException - "+ex.getMessage()+"</h3>");
+            }
+        }catch(IOException ex){
+            try (PrintWriter writer = response.getWriter();){
+                writer.print("<h3>"+movieTitle+" threw IOException - "+ex.getMessage()+"</h3>");
+            }
+        }catch(ParserConfigurationException ex){
+            try (PrintWriter writer = response.getWriter();){
+                writer.print("<h3>"+movieTitle+" threw ParserConfigurationException - "+ex.getMessage()+"</h3>");
+            }
         }
     }
 
