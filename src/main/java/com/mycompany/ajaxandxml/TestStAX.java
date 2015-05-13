@@ -5,7 +5,9 @@
 package com.mycompany.ajaxandxml;
 
 import com.mycompany.ajaxandxml.model.Movie;
+import com.mycompany.ajaxandxml.model.StaxParser;
 import com.mycompany.ajaxandxml.model.XmlParser;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
@@ -19,14 +21,15 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.xml.parsers.ParserConfigurationException;
+import javax.xml.stream.XMLStreamException;
 import org.xml.sax.SAXException;
 
 /**
  *
  * @author vasigorc
  */
-@WebServlet(name = "TestServlet", urlPatterns = {"/resultsreceiver"})
-public class TestServlet extends HttpServlet {
+@WebServlet(name = "TestStAX", urlPatterns = {"/resultswithstax"})
+public class TestStAX extends HttpServlet {
 
     /**
      * Processes requests for both HTTP
@@ -46,7 +49,12 @@ public class TestServlet extends HttpServlet {
         try (PrintWriter out = response.getWriter()) {
             switch (usrChoice) {
                 case "Movie Title":
-                    this.getMovieInfo(request, response, inputValue);
+                    try {
+                        this.getMovieInfo(request, response, inputValue);
+                    } catch (XMLStreamException ex) {
+                        out.println("<h1>XML Stream Exception thrown in the "
+                                + "switch" + ex.getMessage() + "</h1>");
+                    }
                     break;
                 case "Specific Actor":
                     this.getActorMovies(response, inputValue);
@@ -57,31 +65,22 @@ public class TestServlet extends HttpServlet {
                 default:
                     out.println("<h1>Something went really wrong</h1>");
             }
-
         }
     }
 
-    protected void getDirectorMovies(HttpServletResponse response, String director)
-            throws IOException {
-        try (PrintWriter out = response.getWriter()) {
-            ArrayList<String> moviesByDirector = new ArrayList<>();
-            try {
-                XmlParser aParser = new XmlParser();
-                moviesByDirector = aParser.getMoviesByDirector(director);
-            } catch (SAXException | ParserConfigurationException ex) {
-                out.println("<h1>You entered director " + director + "\n"
-                        + "Something went wrong with XML Parser</h1>");
+    protected void getMovieInfo(HttpServletRequest request, HttpServletResponse response, String movieTitle)
+            throws IOException, ServletException, XMLStreamException {
+        try {
+            Movie reqMovie = new StaxParser().getMovieInfo(movieTitle);
+            request.setAttribute("selectedMovie", movieTitle);
+            request.setAttribute("movieInfo", reqMovie);
+            String url = "movieinfo.jsp";
+            RequestDispatcher rd = request.getRequestDispatcher(url);
+            rd.forward(request, response);
+        } catch (IOException ex) {
+            try (PrintWriter writer = response.getWriter();) {
+                writer.print("<h3>" + movieTitle + " threw IOException - " + ex.getMessage() + "</h3>");
             }
-            if (moviesByDirector.isEmpty()) {
-                out.println("<h3>" + director + " didn't direct any upcomming movies.</h3>");
-            } else {
-                out.println("<h3>" + director + " shoot the following movies: </h3><ul class=" + "list-inline" + ">");
-                for (String movie : moviesByDirector) {
-                    out.println("<li>" + movie.toString() + "</li>");
-                }
-                out.println("</ul>");
-            }
-
         }
     }
 
@@ -90,11 +89,10 @@ public class TestServlet extends HttpServlet {
         try (PrintWriter out = response.getWriter()) {
             ArrayList<String> moviesByActor = new ArrayList<>();
             try {
-                XmlParser aParser = new XmlParser();
-                moviesByActor = aParser.getMoviesByActor(actor);
-            } catch (SAXException | ParserConfigurationException ex) {
-                out.println("<h1>You entered actor " + actor + "\n"
-                        + "Something went wrong with XML Parser</h1>");
+                moviesByActor = new StaxParser().getActorMovies(actor);
+            } catch (FileNotFoundException | XMLStreamException e) {
+                out.println("<h3>You entered actor " + actor + "\n"
+                        + "Something went wrong with StAX Parser</h3>");
             }
             if (moviesByActor.isEmpty()) {
                 out.println("<h2>" + actor + " didn't play in any upcomming movies.</h2>");
@@ -108,30 +106,27 @@ public class TestServlet extends HttpServlet {
         }
     }
 
-    protected void getMovieInfo(HttpServletRequest request, HttpServletResponse response, String movieTitle)
-            throws IOException, ServletException {     
-        try {
-//            boolean append = true;
-//            FileHandler handler = new FileHandler("C:\\Users\\vasigorc\\Documents\\NetBeansProjects\\ajaxandxml\\src\\main\\java\\com\\mycompany\\ajaxandxml\\model\\MyLogFile.log", append);
-//            Logger logger = Logger.getLogger("MyLog");
-//            logger.addHandler(handler);            
-            Movie reqMovie = new XmlParser().getMovieInfo(movieTitle);            
-            request.setAttribute("selectedMovie", movieTitle);
-            request.setAttribute("movieInfo", reqMovie);
-            String url = "movieinfo.jsp";
-            RequestDispatcher rd = request.getRequestDispatcher(url);
-            rd.forward(request, response);              
-        } catch (SAXException ex) {
-            try (PrintWriter writer = response.getWriter();){
-                writer.print("<h3>"+movieTitle+" threw SAXException - "+ex.getMessage()+"</h3>");
+    protected void getDirectorMovies(HttpServletResponse response,
+            String director) throws IOException {
+        try (PrintWriter out = response.getWriter()) {
+            ArrayList<String> moviesByDirector = new ArrayList<>();
+            try {
+                moviesByDirector = new StaxParser().getDirectorMovies(director);
+            } catch (FileNotFoundException | XMLStreamException e) {
+                out.println("<h3>You entered director " + director + "\n"
+                        + "Something went wrong with StAX Parser</h3>");
             }
-        }catch(IOException ex){
-            try (PrintWriter writer = response.getWriter();){
-                writer.print("<h3>"+movieTitle+" threw IOException - "+ex.getMessage()+"</h3>");
-            }
-        }catch(ParserConfigurationException ex){
-            try (PrintWriter writer = response.getWriter();){
-                writer.print("<h3>"+movieTitle+" threw ParserConfigurationException - "+ex.getMessage()+"</h3>");
+            if (moviesByDirector.isEmpty()) {
+                out.println("<h2>" + director + " didn't shoot any recent"
+                        + " movies.</h2>");
+            } else {
+
+                out.println("<h3>" + director + " shoot following movies: "
+                        + "</h3><ul class=" + "list-inline" + ">");
+                for (String movie : moviesByDirector) {
+                    out.println("<li>" + movie.toString() + "</li>");
+                }
+                out.println("</ul>");
             }
         }
     }
@@ -175,5 +170,5 @@ public class TestServlet extends HttpServlet {
     @Override
     public String getServletInfo() {
         return "Short description";
-    }// </editor-fold>    
+    }// </editor-fold>
 }

@@ -45,7 +45,8 @@
                 <input  type="text" id="directorInput" placeholder="Enter director's name">
             </div>
             <p class="text-center">
-                <input id="retrieve" class="btn btn-default" type="submit" value="Submit">
+                <input id="retrieve" class="btn btn-default" type="submit" value="With DOM">
+                <input id="findstax" class="btn btn-default" type="submit" value="With StAX">
             </p>
             <div id="dynamiccontent"></div>
         </div>        
