@@ -22,8 +22,6 @@ import javax.xml.bind.annotation.*;
 @XmlAccessorType(XmlAccessType.FIELD)
 public class MovieBill {
     private ArrayList<String> moviesList;
-//    @XmlElement(name="parser")
-//    private StaxParserForWebServices parser;
 
     //constructor
     public MovieBill(){
@@ -31,7 +29,9 @@ public class MovieBill {
     }
 
     /**
+     * @param title
      * @return movie that was retrieved from XML
+     * @throws java.io.IOException
      */
     @WebMethod(operationName = "findMovieInfo")
     public Movie findMovieInfo(@WebParam(name = "title") String title) 

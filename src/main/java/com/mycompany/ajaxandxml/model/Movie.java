@@ -4,6 +4,8 @@
  */
 package com.mycompany.ajaxandxml.model;
 
+import javax.xml.bind.annotation.*;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import org.joda.time.LocalDate;
 import org.joda.time.LocalTime;
 import org.joda.time.Period;
@@ -16,6 +18,14 @@ import org.joda.time.format.PeriodFormatter;
  *
  * @author vasigorc
  */
+@XmlRootElement
+@XmlAccessorType(XmlAccessType.FIELD)
+@XmlType(propOrder={
+    "duration", "showingon", "released",
+    "title", "genre", "rank", "noPasses",
+    "actors", "directors", "producers", "writers",
+    "studios"
+})
 public class Movie {
 
     private String title, genre, rank;
@@ -25,11 +35,14 @@ public class Movie {
      *(as a static var) will return to view a nice string representation of ISO8601
      * duration format
      */
+    @XmlJavaTypeAdapter(com.mycompany.ajaxandxml.ws.DurationAdapter.class)
     private Period duration;
     private static final PeriodFormatter parser = ISOPeriodFormat.standard();
     private static final DateTimeFormatter timeFormatter = DateTimeFormat.forPattern("HH:mm:ss");
     private static final DateTimeFormatter dateFormatter = DateTimeFormat.forPattern("yyyy-MM-dd");
+    @XmlJavaTypeAdapter(com.mycompany.ajaxandxml.ws.LocalTimeAdapter.class)
     private LocalTime[] showingon;
+    @XmlJavaTypeAdapter(com.mycompany.ajaxandxml.ws.ReleasedAdapter.class)
     private LocalDate released;
     private String[] actors, directors, producers, writers, studios;
 

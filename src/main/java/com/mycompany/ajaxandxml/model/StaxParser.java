@@ -12,8 +12,6 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.logging.FileHandler;
-import java.util.logging.Logger;
 import javax.xml.stream.*;
 
 /**
@@ -33,10 +31,6 @@ public class StaxParser {
     }
 
     public Movie getMovieInfo(String movieTitle) throws XMLStreamException, IOException {
-        boolean append = true;
-        FileHandler handler = new FileHandler("C:\\Users\\vasigorc\\Documents\\NetBeansProjects\\ajaxandxml\\src\\main\\java\\com\\mycompany\\ajaxandxml\\model\\MyLogFile.log", append);
-        Logger logger = Logger.getLogger("MyLog");
-        logger.addHandler(handler);
         while (reader.hasNext()) {
             int event = reader.next();
             if (event == XMLStreamConstants.START_ELEMENT && reader.getLocalName().equalsIgnoreCase("title")) {
