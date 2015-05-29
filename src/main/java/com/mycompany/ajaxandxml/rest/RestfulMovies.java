@@ -8,7 +8,11 @@ package com.mycompany.ajaxandxml.rest;
 import com.mycompany.ajaxandxml.model.StaxParserForWebServices;
 import com.mycompany.ajaxandxml.model.Movie;
 import com.mycompany.ajaxandxml.ws.*;
+import java.io.IOException;
 import java.util.ArrayList;
+import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.ws.rs.core.Context;
 import javax.ws.rs.core.UriInfo;
 import javax.ws.rs.PathParam;
@@ -46,17 +50,39 @@ public class RestfulMovies {
     @Path("actors/{name}")
     @Produces("application/xml")
     public ArrayList<String> getActorMovies(@PathParam("name") String name) {
-        //TODO return proper representation object
-        throw new UnsupportedOperationException();
+        try {
+            //TODO return proper representation object
+            ArrayList<String> movies = new StaxParserForWebServices().getActorMovies(name);
+            return movies;
+        } catch (IOException ex) {
+            Logger.getLogger(RestfulMovies.class.getName()).log(Level.INFO, ex.getMessage());
+        }
+        return null;
     }
-
-    /**
-     * PUT method for updating or creating an instance of RestfulMovies
-     * @param content representation for the resource
-     * @return an HTTP response with content of the updated or created resource.
-     */
-    @PUT
-    @Consumes("text/html")
-    public void putHtml(String content) {
+    
+    @GET
+    @Path("directors/{name}")
+    @Produces("application/xml")
+    public ArrayList<String> getDirectorMovies(@PathParam("name") String name){
+        try{
+            ArrayList<String> movies = new StaxParserForWebServices().getDirectorMovies(name);
+            return movies;
+        }catch(IOException ex){
+            Logger.getLogger(RestfulMovies.class.getName()).log(Level.INFO, ex.getMessage());
+        }
+        return null;
     }
+    
+    @GET
+    @Path("movies/{name}")
+    @Produces("application/xml")
+    public Movie getMovieInfo(@PathParam("name") String name){
+        try {
+            Movie aMovie = new StaxParserForWebServices().getMovieInfo(name);
+            return aMovie;            
+        } catch (IOException ex) {
+            Logger.getLogger(RestfulMovies.class.getName()).log(Level.INFO, ex.getMessage());
+        }
+        return null;
+    }    
 }
